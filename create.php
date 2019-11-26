@@ -6,4 +6,9 @@
     $task = $_POST['task'];
 
     $todo = new Todo();
+    // メソッドcreateを使った
     $todo->create($task);
+
+    // 組み込み関数の一種
+    // htmlより先に書く
+    header('Location: index.php');
