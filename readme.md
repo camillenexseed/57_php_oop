@@ -14,7 +14,7 @@ create.php を作成し Todo.phpからTodoクラスを呼び出す
 index.php から送られてきた値を取得し、Todoクラスを使ってレコードを追加する
 index.phpにリダイレクトする
 
-#データの登録(Read)
+## データの登録(Read)
 
 Todoクラスに全ての登録したデータを呼び出すメソッド追加。
 エスケープ処理用のfunction.phpも追加
