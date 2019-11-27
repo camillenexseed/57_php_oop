@@ -1,3 +1,25 @@
+<?php
+    require_once('Models/Todo.php');
+    require_once('function.php');
+
+    //Todoクラスのインスタンス化
+    $todo = new Todo();
+    //DBからデータを全件取得
+    $tasks = $todo->all();
+    //
+    // echo '<pre>';
+    // var_dump($tasks);
+    // 処理を中断
+    // exit();
+
+    // エスケープ処理
+    // function.phpを作成
+    // エスケープ用の関数追加
+    // 関数のファイルの読み込み
+    // 作った関数を$tasksのそれぞれの値をエスケープ処理
+
+?>
+
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -30,9 +52,39 @@
             </div>
         </form>
     </section>
-    <section>
-
-    </section>
+    <section class="mt-5">
+  <table class="table table-hover">
+      <thead>
+        <tr class="bg-primary text-light">
+            <th class=>TODO</th>
+            <th>DUE DATE</th>
+            <th></th>
+            <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      <?php foreach($tasks as $task):?>
+        <!--ここ以下後ほど繰り返し処理する-->
+        <tr>
+        <!-- ->
+        配列
+        キー 値(バリュー)
+        a => b,
+        c => d, -->
+            <td><?php echo h($task['name']); ?></td>
+            <td><?php echo h($task['due_date']); ?></td>
+            <td>
+                <a class="text-success" href="">EDIT</a>
+            </td>
+            <td>
+                <a class="text-danger" href="">DELETE</a>
+            </td>
+        </tr>
+      <?php endforeach;?>
+        <!--/ ここ以上後ほど繰り返し処理する-->
+      </tbody>
+  </table>
+</section>
 </main>
 </body>
 </html>
