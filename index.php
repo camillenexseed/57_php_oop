@@ -74,7 +74,10 @@
             <td><?php echo h($task['name']); ?></td>
             <td><?php echo h($task['due_date']); ?></td>
             <td>
-                <a class="text-success" href="">EDIT</a>
+              <!-- aタグを使うとGETが使える
+              パラメーターidに渡す値をそれぞれ変えるためにはどうすればいいか考えてください
+              -->
+                <a class="text-success" href="edit.php?id=<?php echo h($task['id']); ?>">EDIT</a>
             </td>
             <td>
                 <a class="text-danger" href="">DELETE</a>
