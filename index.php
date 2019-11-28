@@ -73,7 +73,7 @@
         a => b,
         c => d, -->
             <td><?php echo h($task['name']); ?></td>
-            <td><?php echo h($task['due_date']); ?></td>
+            <td><?php echo date('F.d,Y', strtotime($task['due_date'])); ?></td>
             <td>
               <!-- aタグを使うとGETが使える
               パラメーターidに渡す値をそれぞれ変えるためにはどうすればいいか考えてください
