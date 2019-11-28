@@ -28,6 +28,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -77,10 +78,10 @@
               <!-- aタグを使うとGETが使える
               パラメーターidに渡す値をそれぞれ変えるためにはどうすればいいか考えてください
               -->
-                <a class="text-success" href="edit.php?id=<?php echo h($task['id']); ?>">EDIT</a>
+                <a class="text-success" href="edit.php?id=<?php echo h($task['id']); ?>"><i class="fas fa-pen-fancy"></i></a>
             </td>
             <td>
-                <a class="text-danger" href="delete.php?id=<?php echo h($task['id']); ?>">DELETE</a>
+                <a class="text-danger" href="delete.php?id=<?php echo h($task['id']); ?>"><i class="fas fa-trash-alt"></i></a>
             </td>
         </tr>
       <?php endforeach;?>
