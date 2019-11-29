@@ -13,8 +13,9 @@
 
         public function create($name)
         {
-            $stmt = $this->db_manager->dbh->prepare('INSERT INTO '.$this->table.' (name) VALUES (?)');
-            $stmt->execute([$name]);
+            $stmt = $this->db_manager->dbh->prepare('INSERT INTO '.$this->table.' (name ,	created_at) VALUES (? ,?)');
+            $created = date('Y-m-d H:i:s', time());
+            $stmt->execute([$name, $created]);
         }
 
         public function all()
@@ -38,8 +39,9 @@
 
         public function update($name, $id)
         {
-            $stmt = $this->db_manager->dbh->prepare('UPDATE '.$this->table.' SET name = ? WHERE id = ?');
-            $stmt->execute([$name, $id]);
+            $stmt = $this->db_manager->dbh->prepare('UPDATE '.$this->table.' SET name = ?  WHERE id = ?');
+            // updated_at の時間も更新する。更新した時間を取得する。
+            $stmt->execute([$name,  $id]);
         }
 
         // Todoクラスの中にメソッドdelete()を作成

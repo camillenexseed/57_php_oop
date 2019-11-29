@@ -45,7 +45,7 @@
     <section>
         <form class="form-row justify-content-center" action="create.php" method="POST">
             <div class="col-10 col-md-6 py-2">
-                <input type="text" class="form-control" placeholder="ADD TODO" name="task">
+                <textarea class="form-control" placeholder="ADD TODO" name="task"></textarea>
             </div>
             <div class="py-2 col-md-3 col-10">
                 <button type="submit" class="col-12 btn btn-primary">ADD</button>
@@ -71,8 +71,11 @@
         キー 値(バリュー)
         a => b,
         c => d, -->
-            <td><?php echo h($task['name']); ?></td>
-            <td><?php echo h($task['due_date']); ?></td>
+            <td><?php echo nl2br(h($task['name'])); ?></td>
+            <td>registered:<?php echo date('Y年m月d日', strtotime(h($task['due_date']))); ?>
+            <br>
+            modified:<?php echo date('Y年m月d日', strtotime(h($task['updated_at']))); ?>
+            </td>
             <td>
               <!-- aタグを使うとGETが使える
               パラメーターidに渡す値をそれぞれ変えるためにはどうすればいいか考えてください
