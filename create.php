@@ -7,8 +7,14 @@
 
     $todo = new Todo();
     // メソッドcreateを使った
-    $todo->create($task);
+    $createdTaskId = $todo->create($task);
+
+    $task = $todo->get($createdTaskId);
+    // phpの配列をJS(JSON)にエンコードできる
+    echo json_encode($task);
+
+    exit();
 
     // 組み込み関数の一種
     // htmlより先に書く
-    header('Location: index.php');
+    // header('Location: index.php');

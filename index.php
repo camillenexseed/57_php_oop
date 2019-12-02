@@ -43,12 +43,12 @@
 </header>
 <main class="container py-5">
     <section>
-        <form class="form-row justify-content-center" action="create.php" method="POST">
+        <form class="form-row justify-content-center">
             <div class="col-10 col-md-6 py-2">
-                <input type="text" class="form-control" placeholder="ADD TODO" name="task">
+                <input type="text" class="form-control" placeholder="ADD TODO" name="task" id="js-task">
             </div>
             <div class="py-2 col-md-3 col-10">
-                <button type="submit" class="col-12 btn btn-primary">ADD</button>
+                <button class="col-12 btn btn-primary" id="js-add-task">ADD</button>
             </div>
         </form>
     </section>
@@ -89,5 +89,9 @@
   </table>
 </section>
 </main>
+<!-- script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="assets/js/app.js"></script>
+<!--/ script -->
 </body>
 </html>
