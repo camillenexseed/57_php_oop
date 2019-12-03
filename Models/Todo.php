@@ -54,6 +54,6 @@
             // データを取り出す準備
             $stmt = $this->db_manager->dbh->prepare('DELETE FROM '.$this->table.' WHERE id = ?');
             //実行する
-            $stmt->execute([$id]);
+            return $stmt->execute([$id]);
         }
     }
