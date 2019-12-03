@@ -24,8 +24,24 @@ $(function () {
             dataType: 'json'
         })
             .then(
+                // 処理成功
+                function () {
+                    // js-task- + id 削除する関数作成
+                    deleteDOM(id)
+                },
+                // 処理失敗
+                function () {
+
+                }
 
             )
+    }
+
+    // 削除する関数作成
+    function deleteDOM(id) {
+        // 要素 + .remove();
+        // 削除
+        $('#js-task-' + id).remove();
     }
 
 
@@ -69,8 +85,8 @@ $(function () {
         $('tbody').append(
             `<tr><td>${task.name}</td>
                 <td>${task.due_date}</td>
-                <td></td>
-                <td></td>
+                <td><a class="text-success" href="edit.php?id=${task.id}">EDIT</a></td>
+                <td><a class="text-danger" href="" id="js-delete-btn-${task.id}">DELETE</a></td>
             </tr>`
         )
     }
